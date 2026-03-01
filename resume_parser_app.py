@@ -524,12 +524,12 @@ for category, skills in SKILL_DB.items():
 
 
 SECTION_PATTERNS = {
-    "experience": r"(?i)(work\s+experience|professional\s+experience|employment|experience|career\s+history|work\s+history)",
-    "education": r"(?i)(education|academic|qualification|degree|university|college|school)",
-    "skills": r"(?i)(skills|technical\s+skills|core\s+competencies|technologies|expertise|proficiencies)",
-    "projects": r"(?i)(projects|personal\s+projects|key\s+projects|notable\s+projects|portfolio)",
-    "certifications": r"(?i)(certification|certificates|licenses|credentials|awards)",
-    "summary": r"(?i)(summary|profile|objective|about\s+me|overview|executive\s+summary|professional\s+summary)",
+    "experience": r"(work\s+experience|professional\s+experience|employment|experience|career\s+history|work\s+history)",
+    "education": r"(education|academic|qualification|degree|university|college|school)",
+    "skills": r"(skills|technical\s+skills|core\s+competencies|technologies|expertise|proficiencies)",
+    "projects": r"(projects|personal\s+projects|key\s+projects|notable\s+projects|portfolio)",
+    "certifications": r"(certification|certificates|licenses|credentials|awards)",
+    "summary": r"(summary|profile|objective|about\s+me|overview|executive\s+summary|professional\s+summary)",
 }
 
 CONTACT_PATTERNS = {
@@ -678,19 +678,27 @@ def extract_job_titles(text: str) -> list:
     return list(dict.fromkeys(titles))[:5]
 
 
+def _is_section_header(line: str) -> bool:
+    """Check if a line matches any known section header pattern."""
+    for pattern in SECTION_PATTERNS.values():
+        if re.search(pattern, line, re.IGNORECASE):
+            return True
+    return False
+
+
 def extract_summary(text: str) -> str:
     lines = [l.strip() for l in text.split('\n') if l.strip()]
     # Look for summary section
     for i, line in enumerate(lines):
-        if re.search(SECTION_PATTERNS["summary"], line):
+        if re.search(SECTION_PATTERNS["summary"], line, re.IGNORECASE):
             chunk = []
             for j in range(i+1, min(i+8, len(lines))):
-                if re.search(r'|'.join(SECTION_PATTERNS.values()), lines[j]):
+                if _is_section_header(lines[j]):
                     break
                 chunk.append(lines[j])
             if chunk:
                 return ' '.join(chunk)[:500]
-    
+
     # Fallback: find longest paragraph-like section near top
     for line in lines[:20]:
         if len(line) > 80 and not re.search(r'[@|\d{4}]', line[:10]):
