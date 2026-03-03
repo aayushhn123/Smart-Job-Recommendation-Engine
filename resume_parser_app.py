@@ -4,7 +4,7 @@ import re
 import json
 from collections import defaultdict
 
-st.set_page_config(page_title="ResumeIQ", page_icon="⚡", layout="centered")
+st.set_page_config(page_title="HireMind", page_icon="⚡", layout="centered")
 
 # ─────────────────────────────────────────────
 # SKILL DATABASE
