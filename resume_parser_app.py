@@ -212,7 +212,7 @@ def parse_resume(text: str) -> dict:
 # APP UI
 # ─────────────────────────────────────────────
 
-st.title("⚡ ResumeIQ")
+st.title("⚡ HireMind")
 st.caption("Upload any PDF resume to extract skills, experience, and insights instantly.")
 st.divider()
 
