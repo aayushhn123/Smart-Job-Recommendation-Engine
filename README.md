@@ -1,172 +1,128 @@
-# ⚡ ResumeIQ — Smart Job Recommendation Engine
-
+⚡ HireMind — AI-Powered Job Recommendation Engine
 <div align="center">
-
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B?style=flat-square&logo=streamlit)
+![Groq](https://img.shields.io/badge/Groq-LLaMA%203.3-orange?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-
-**A DSA-powered resume parser and job recommendation engine built with Streamlit.**  
-Upload any PDF resume → extract skills → get matched to jobs.
-
-[🚀 Live Demo](#) · [📖 Docs](#how-it-works) · [🐛 Issues](../../issues)
-
+Upload your resume → get matched to live jobs → close skill gaps → get AI coaching.
+🚀 Live Demo · 📖 Setup · 🔑 API Keys
 </div>
-
 ---
-
-## ✨ Features
-
-- 📄 **Universal PDF Parser** — handles any resume format: single-column, multi-column, tables, graphics-heavy CVs
-- 🔍 **Smart Skill Extraction** — matches 200+ skills across 7 categories using longest-match regex
-- 👤 **Contact Info Detection** — name, email, phone, LinkedIn, GitHub, website
-- 🎓 **Education Parser** — detects degrees, universities, and qualifications
-- 💼 **Role Identification** — infers job titles and seniority from content
-- 📊 **Skill Gap Analysis** — visual breakdown of skill categories with frequency scoring
-- 📦 **JSON Export** — download parsed resume data as structured JSON
-- 🌙 **Beautiful Dark UI** — custom editorial design, zero generic Streamlit defaults
-
+✨ Features
+Feature	Description
+📄 Resume Parser	Extracts skills, contact info, education, experience from any PDF
+🔍 Live Job Matching	Fetches real jobs from Himalayas API + JSearch (Google for Jobs)
+📊 Match Scoring	DSA-powered scoring: skill overlap + title match + frequency analysis
+📉 Skill Gap Analysis	Shows exactly which skills are missing across your top job matches
+✍️ AI Cover Letters	Groq LLaMA 3.3 writes personalised cover letters per job
+🎯 Interview Prep	AI generates role-specific interview questions + answering tips
+🗺️ Learning Roadmap	30-60-90 day personalised plan to close skill gaps
+💬 Career Coach Chat	Persistent chat with an AI career coach aware of your resume
+📦 Export	Download resume data, job matches, full report, cover letters
 ---
-
-## 🗂️ Project Structure
-
-```
-resumeiq/
-├── resume_parser_app.py   # Main Streamlit application
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
-```
-
+🔑 API Keys
+Required
+Key	Where to get	Cost
+GROQ_API_KEY	console.groq.com	Free (no credit card)
+Optional
+Key	Where to get	Cost
+RAPIDAPI_KEY	rapidapi.com → JSearch	Free tier: 10 req/month
+> The app works **without any API keys** using the Himalayas free job API.
+> Add Groq to unlock AI features. Add RapidAPI for more job sources.
 ---
-
-## 🚀 Deploy on Streamlit Cloud (Recommended)
-
-### Step 1 — Push to GitHub
-
+🚀 Deploy on Streamlit Cloud
+1. Push to GitHub
 ```bash
-# Create a new repo on github.com, then:
 git init
-git add .
-git commit -m "🚀 Initial commit — ResumeIQ"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/resumeiq.git
+git add hiremind_app.py requirements.txt README.md .gitignore
+git commit -m "🚀 Initial HireMind commit"
+git remote add origin https://github.com/YOUR_USERNAME/hiremind.git
 git push -u origin main
 ```
-
-### Step 2 — Deploy on Streamlit Cloud
-
-1. Go to **[share.streamlit.io](https://share.streamlit.io)**
-2. Click **"New app"**
-3. Connect your GitHub account
-4. Select your repository and set:
-   - **Branch:** `main`
-   - **Main file path:** `resume_parser_app.py`
-5. Click **"Deploy!"**
-
-Streamlit Cloud automatically installs everything from `requirements.txt`. Your app will be live at:
+2. Deploy
+Go to share.streamlit.io
+Click New app → connect your repo
+Set Main file path: `hiremind_app.py`
+Click Advanced settings → paste your secrets:
+```toml
+GROQ_API_KEY = "gsk_your_key_here"
+RAPIDAPI_KEY = "your_key_here"   # optional
 ```
-https://YOUR_USERNAME-resumeiq-resume-parser-app-XXXX.streamlit.app
-```
-
+Click Deploy!
 ---
-
-## 💻 Run Locally
-
-### Prerequisites
-- Python 3.9 or higher
-- pip
-
-### Setup
-
+💻 Run Locally
 ```bash
-# 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/resumeiq.git
-cd resumeiq
+# 1. Clone
+git clone https://github.com/YOUR_USERNAME/hiremind.git
+cd hiremind
 
-# 2. (Optional) Create a virtual environment
-python -m venv venv
-source venv/bin/activate        # macOS/Linux
-venv\Scripts\activate           # Windows
-
-# 3. Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 4. Run the app
-streamlit run resume_parser_app.py
+# 3. Set up secrets
+mkdir -p .streamlit
+cp secrets.toml.template .streamlit/secrets.toml
+# Edit .streamlit/secrets.toml with your actual keys
+
+# 4. Run
+streamlit run hiremind_app.py
 ```
-
-The app opens automatically at `http://localhost:8501`
-
 ---
-
-## 🧠 How It Works
-
-ResumeIQ is intentionally **ML-free** — it uses classical DSA techniques for speed and transparency:
-
-| Component | Technique |
-|---|---|
-| PDF Extraction | `pdfplumber` with tolerance-tuned text + table parsing |
-| Skill Matching | Longest-match regex over a 200+ skill dictionary |
-| Contact Extraction | Named regex patterns per field type |
-| Education Detection | Degree keyword + institution name patterns |
-| Experience Estimation | Date range parsing + explicit mention extraction |
-| Skill Ranking | Frequency counting across raw text |
-
-### Skill Categories
-
-| Category | Examples |
-|---|---|
-| 💻 Languages | Python, JavaScript, Java, Go, Rust, C++ |
-| 🌐 Frameworks | React, Django, FastAPI, Spring Boot, Next.js |
-| 🧠 AI / ML | TensorFlow, PyTorch, Scikit-learn, LangChain |
-| 🗄️ Databases | PostgreSQL, MongoDB, Redis, Snowflake |
-| ☁️ Cloud & DevOps | AWS, Docker, Kubernetes, Terraform, CI/CD |
-| 🔧 Tools | Git, Kafka, Airflow, Tableau, Figma |
-| 🤝 Soft Skills | Leadership, Agile, Scrum, Communication |
-
----
-
-## 🗺️ Roadmap
-
-- [x] Resume PDF parsing
-- [x] Skill extraction (200+ skills)
-- [x] Contact & education detection
-- [x] Skill gap analysis UI
-- [ ] Job dataset integration
-- [ ] Job–resume matching with relevance scores
-- [ ] Missing skills recommendations
-- [ ] Top-K job ranking (DSA-powered)
-- [ ] User accounts & resume history
-
----
-
-## 🛠️ Tech Stack
-
-- **[Streamlit](https://streamlit.io)** — UI framework
-- **[pdfplumber](https://github.com/jsvine/pdfplumber)** — PDF text extraction
-- **Python stdlib** — `re`, `json`, `collections` (no heavy ML deps)
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first.
-
-```bash
-git checkout -b feature/your-feature
-git commit -m "feat: add your feature"
-git push origin feature/your-feature
+📁 File Structure
 ```
-
+hiremind/
+├── hiremind_app.py          ← Main application (single file)
+├── requirements.txt         ← 4 dependencies
+├── README.md                ← This file
+├── .gitignore               ← Excludes secrets.toml
+└── secrets.toml.template    ← Copy to .streamlit/secrets.toml
+```
 ---
-
-## 📄 License
-
-[MIT](LICENSE) — free to use, modify, and distribute.
-
+🏗️ Architecture
+```
+Resume PDF
+    ↓
+pdfplumber → raw text
+    ↓
+parse_resume() → structured dict
+    │
+    ├─→ Skills (200+ keyword matching, DSA: longest-match + word boundaries)
+    ├─→ Contact (regex patterns)
+    ├─→ Education (degree keyword search)
+    ├─→ Experience (date range counting)
+    └─→ Job Titles (keyword heuristics)
+         ↓
+Himalayas API + JSearch API → live job listings
+    ↓
+compute_match() → skill overlap score (0-100)
+    │   ├─ Skill intersection score (0-70 pts)
+    │   ├─ Title keyword score (0-20 pts)
+    │   └─ Description frequency score (0-10 pts)
+    ↓
+rank_jobs() → sorted by score, deduplicated
+    ↓
+Groq LLaMA 3.3 → Cover letters · Interview prep · Roadmap · Chat
+```
 ---
-
+🗺️ Roadmap
+[x] Resume PDF parsing (any format)
+[x] 200+ skill extraction across 7 categories
+[x] Live job fetching (Himalayas + JSearch)
+[x] DSA-powered match scoring
+[x] Skill gap analysis & visualisation
+[x] AI cover letter generation (Groq)
+[x] Interview prep questions (Groq)
+[x] 30-60-90 day learning roadmap (Groq)
+[x] Persistent career coach chat (Groq)
+[x] Full data export (JSON + Markdown)
+[ ] LinkedIn profile import
+[ ] Salary benchmarking
+[ ] Application tracker
+[ ] Email job alerts
+---
+📄 License
+MIT — free to use, modify, and deploy.
+---
 <div align="center">
-Built with ⚡ using Streamlit · Part of the Smart Job Recommendation Engine project
+Built with ⚡ Streamlit · Groq LLaMA 3.3 · Himalayas API · JSearch
 </div>
