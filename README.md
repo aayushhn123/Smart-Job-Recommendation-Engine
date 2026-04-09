@@ -1,8 +1,5 @@
-````markdown
 # ⚡ HireMind — AI-Powered Job Recommendation Engine
-
 <div align="center">
-
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-F55036?style=flat-square)
@@ -12,7 +9,6 @@
 **Upload any PDF resume → auto-detect your domain → fetch live jobs → score every match → close skill gaps → get AI coaching.**
 
 [🚀 Live Demo](https://smart-job-recommendation-engine.streamlit.app/) · [⚙️ Setup](#-setup) · [🔑 API Keys](#-api-keys) · [🏗️ Architecture](#-architecture)
-
 </div>
 
 ---
@@ -96,31 +92,26 @@ git init
 git add hiremind_app.py requirements.txt README.md .gitignore
 git commit -m "feat: initial HireMind deploy"
 git branch -M main
-git remote add origin [https://github.com/YOUR_USERNAME/hiremind.git](https://github.com/YOUR_USERNAME/hiremind.git)
+git remote add origin https://github.com/YOUR_USERNAME/hiremind.git
 git push -u origin main
-````
+```
 
 **2. Deploy on Streamlit Cloud**
-
-1.  Go to **[share.streamlit.io](https://share.streamlit.io)**
-2.  Click **New app** → connect your GitHub repo
-3.  Set **Main file path** → `hiremind_app.py`
-4.  Click **Advanced settings** → paste into the Secrets field:
-
-<!-- end list -->
-
+1. Go to **[share.streamlit.io](https://share.streamlit.io)**
+2. Click **New app** → connect your GitHub repo
+3. Set **Main file path** → `hiremind_app.py`
+4. Click **Advanced settings** → paste into the Secrets field:
 ```toml
 GROQ_API_KEY = "gsk_your_key_here"
 RAPIDAPI_KEY = "your_key_here"   # optional
 ```
-
-5.  Click **Deploy** — live in \~60 seconds
+5. Click **Deploy** — live in ~60 seconds
 
 ### Option B — Run Locally
 
 ```bash
 # 1. Clone
-git clone [https://github.com/YOUR_USERNAME/hiremind.git](https://github.com/YOUR_USERNAME/hiremind.git)
+git clone https://github.com/YOUR_USERNAME/hiremind.git
 cd hiremind
 
 # 2. Install dependencies
@@ -137,7 +128,7 @@ streamlit run hiremind_app.py
 
 App opens at `http://localhost:8501`
 
------
+---
 
 ## 📦 Dependencies
 
@@ -150,7 +141,7 @@ requests>=2.31.0
 
 Only 4 dependencies — everything else (`re`, `json`, `collections`) is Python stdlib.
 
------
+---
 
 ## 📁 File Structure
 
@@ -163,7 +154,7 @@ hiremind/
 └── secrets.toml.template    ← Copy to .streamlit/secrets.toml locally
 ```
 
------
+---
 
 ## 🏗️ Architecture
 
@@ -211,7 +202,7 @@ PDF Upload / Paste Text
    └─ career coach chat      — context-aware persistent chat
 ```
 
------
+---
 
 ## 🧠 How the Scoring Works
 
@@ -225,7 +216,7 @@ Every job gets a score out of 100 built from three components:
 
 The score breakdown is shown on every job card so you know exactly why a job ranked where it did.
 
------
+---
 
 ## 🐛 Known Fixes Applied
 
@@ -236,7 +227,7 @@ The score breakdown is shown on every job card so you know exactly why a job ran
 | `global flags not at the start` crash on Python 3.13 | Inline `(?i)` flags inside joined regex patterns | Removed all inline flags; pass `re.IGNORECASE` as argument to every `re.search()` call |
 | `fetch_jobs_himalayas` silently not running | Function body was accidentally placed after a `return False` statement during an edit | Full clean rewrite separating all functions properly |
 
------
+---
 
 ## 🗺️ Roadmap
 
@@ -263,7 +254,7 @@ The score breakdown is shown on every job card so you know exactly why a job ran
 | 🔜 Planned | Email job alerts |
 | 🔜 Planned | Resume version comparison |
 
------
+---
 
 ## ⚙️ Configuration Reference
 
@@ -277,17 +268,14 @@ All settings live in the sidebar at runtime. For Streamlit Cloud deployment, set
 | Location | Sidebar | Preferred job location (default: Remote) |
 | Max jobs to display | Sidebar slider | 5–25 jobs shown (default: 10) |
 
------
+---
 
+## 📄 License
 
+MIT — free to use, modify, and deploy.
 
------
+---
 
-\<div align="center"\>
-
-Built with ⚡ **Streamlit**  ·  🤖 **Groq LLaMA 3.3 70B**  ·  🌐 **Himalayas API**  ·  🔍 **JSearch / Google for Jobs**
-
-\</div\>
-
-```
-```
+<div align="center">
+Built with ⚡ **Streamlit** &nbsp;·&nbsp; 🤖 **Groq LLaMA 3.3 70B** &nbsp;·&nbsp; 🌐 **Himalayas API** &nbsp;·&nbsp; 🔍 **JSearch / Google for Jobs**
+</div>
