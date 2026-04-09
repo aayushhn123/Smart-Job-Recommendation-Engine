@@ -10,7 +10,7 @@
 
 **Upload any PDF resume → auto-detect your domain → fetch live jobs → score every match → close skill gaps → get AI coaching.**
 
-[🚀 Live Demo](#) · [⚙️ Setup](#-setup) · [🔑 API Keys](#-api-keys) · [🏗️ Architecture](#-architecture)
+[🚀 Live Demo](#https://smart-job-recommendation-engine.streamlit.app/) · [⚙️ Setup](#-setup) · [🔑 API Keys](#-api-keys) · [🏗️ Architecture](#-architecture)
 
 </div>
 
