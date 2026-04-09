@@ -1,15 +1,23 @@
 # ⚡ HireMind — AI-Powered Job Recommendation Engine
-<div align="center">
-![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-F55036?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Production-22C55E?style=flat-square)
 
-**Upload any PDF resume → auto-detect your domain → fetch live jobs → score every match → close skill gaps → get AI coaching.**
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-F55036?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-22C55E?style=flat-square" />
+  <img src="https://img.shields.io/badge/Status-Production-22C55E?style=flat-square" />
+</p>
 
-[🚀 Live Demo](https://smart-job-recommendation-engine.streamlit.app/) · [⚙️ Setup](#-setup) · [🔑 API Keys](#-api-keys) · [🏗️ Architecture](#-architecture)
-</div>
+<p align="center">
+  <strong>Upload any PDF resume → auto-detect your domain → fetch live jobs → score every match → close skill gaps → get AI coaching.</strong>
+</p>
+
+<p align="center">
+  <a href="https://smart-job-recommendation-engine.streamlit.app/">🚀 Live Demo</a> &nbsp;·&nbsp;
+  <a href="#-setup">⚙️ Setup</a> &nbsp;·&nbsp;
+  <a href="#-api-keys">🔑 API Keys</a> &nbsp;·&nbsp;
+  <a href="#-architecture">🏗️ Architecture</a>
+</p>
 
 ---
 
@@ -276,6 +284,6 @@ MIT — free to use, modify, and deploy.
 
 ---
 
-<div align="center">
-Built with ⚡ **Streamlit** &nbsp;·&nbsp; 🤖 **Groq LLaMA 3.3 70B** &nbsp;·&nbsp; 🌐 **Himalayas API** &nbsp;·&nbsp; 🔍 **JSearch / Google for Jobs**
-</div>
+<p align="center">
+  Built with ⚡ <strong>Streamlit</strong> &nbsp;·&nbsp; 🤖 <strong>Groq LLaMA 3.3 70B</strong> &nbsp;·&nbsp; 🌐 <strong>Himalayas API</strong> &nbsp;·&nbsp; 🔍 <strong>JSearch / Google for Jobs</strong>
+</p>
