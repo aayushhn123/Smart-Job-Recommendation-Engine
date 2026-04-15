@@ -920,28 +920,30 @@ with tab2:
                         st.link_button("🚀 Apply Now", job["url"], use_container_width=True)
                 with b2:
                     if groq_client:
-                        if st.button("✍️ Cover Letter", key=f"cl_{i}", use_container_width=True):
+                        # Use btn_cl_ prefix so button key never collides with storage key cl_
+                        if st.button("✍️ Cover Letter", key=f"btn_cl_{i}", use_container_width=True):
                             with st.spinner("Writing..."):
-                                st.session_state[f"cl_{i}"] = ai_cover_letter(groq_client, resume_data, job)
+                                st.session_state[f"cl_result_{i}"] = ai_cover_letter(groq_client, resume_data, job)
                     else:
                         st.caption("Add Groq key for AI")
                 with b3:
                     if groq_client:
-                        if st.button("🎯 Interview Prep", key=f"ip_{i}", use_container_width=True):
+                        # Use btn_ip_ prefix so button key never collides with storage key ip_
+                        if st.button("🎯 Interview Prep", key=f"btn_ip_{i}", use_container_width=True):
                             with st.spinner("Preparing..."):
-                                st.session_state[f"ip_{i}"] = ai_interview_prep(groq_client, job, resume_data)
+                                st.session_state[f"ip_result_{i}"] = ai_interview_prep(groq_client, job, resume_data)
 
-                if st.session_state.get(f"cl_{i}"):
+                if st.session_state.get(f"cl_result_{i}"):
                     st.divider()
                     st.markdown("**✍️ Cover Letter**")
-                    st.markdown(st.session_state[f"cl_{i}"])
-                    st.download_button("⬇️ Save", data=st.session_state[f"cl_{i}"],
+                    st.markdown(st.session_state[f"cl_result_{i}"])
+                    st.download_button("⬇️ Save", data=st.session_state[f"cl_result_{i}"],
                                        file_name=f"cover_{job['company'].replace(' ','_')}.txt",
                                        mime="text/plain", key=f"dl_cl_{i}")
-                if st.session_state.get(f"ip_{i}"):
+                if st.session_state.get(f"ip_result_{i}"):
                     st.divider()
                     st.markdown("**🎯 Interview Questions**")
-                    st.markdown(st.session_state[f"ip_{i}"])
+                    st.markdown(st.session_state[f"ip_result_{i}"])
     elif not st.session_state.get("jobs_loaded"):
         st.info("👆 Click **Fetch Jobs** to find live matches for your profile.")
 
