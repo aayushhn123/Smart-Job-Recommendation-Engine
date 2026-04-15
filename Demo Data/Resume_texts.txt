@@ -1,0 +1,98 @@
+Alex Mercer
+alex.mercer@email.com | +1 (555) 123-4567
+linkedin.com/in/alexmercer-ml | github.com/alexmercer-ai
+
+Professional Summary
+Results-driven Data Scientist and Machine Learning Engineer with 3 years of experience building scalable AI solutions. Passionate about leveraging deep learning and statistical modeling to solve complex business problems.
+
+Skills
+Languages: Python, SQL, R, Bash
+AI / ML: Machine Learning, Deep Learning, TensorFlow, PyTorch, Scikit-learn, Pandas, Numpy, Computer Vision, NLP
+Tools & Cloud: Docker, AWS, Git, Jupyter, Airflow
+
+Work Experience
+Data Scientist | TechNova Solutions
+2022 - Present
+- Built and deployed predictive machine learning models using XGBoost and PyTorch, which improved customer retention by 15%.
+- Analyzed large datasets using Pandas and SQL to uncover trends, accelerating business decision-making.
+- Automated data pipelines with Airflow and Docker, reducing manual processing time by 40%.
+- Collaborated with software engineers to integrate computer vision APIs into the main product.
+
+Junior Data Analyst | Insight Corp
+2020 - 2022
+- Designed interactive dashboards in Tableau and optimized SQL queries.
+- Researched and implemented statistical models to forecast quarterly sales.
+
+Education
+B.Tech in Computer Science
+State University
+2016 - 2020
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Samantha Lee
+samantha.lee.dev@email.com | (212) 555-7890
+linkedin.com/in/samleedev | github.com/samleecodes
+samanthaportfolio.com
+
+Professional Summary
+Creative and detail-oriented Frontend Developer with a strong foundation in modern web frameworks. Dedicated to building responsive, accessible, and highly interactive user interfaces. Seeking an entry-level role to contribute to dynamic web applications.
+
+Technical Skills
+Frameworks: React, Next.js, Vue, Tailwind CSS
+Languages: JavaScript, TypeScript, HTML, CSS
+Tools: Git, GitHub, Figma, VSCode, Vercel
+
+Projects
+E-Commerce Dashboard
+- Built a responsive web application using React and TypeScript.
+- Implemented state management and optimized API calls, which reduced load times by 20%.
+- Designed the UI prototype in Figma and translated it into clean, maintainable code.
+
+Weather App
+- Developed a dynamic weather tracker using JavaScript and REST APIs.
+- Deployed the application seamlessly via Vercel.
+
+Education
+Bachelor of Science in Information Technology
+Tech Institute of Modern Arts
+2021 - 2025
+- Relevant Coursework: Web Development, Data Structures, UI/UX Design
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Marcus Johnson
+mjohnson.cloud@email.com | 415-555-0987
+linkedin.com/in/marcusj-cloud | github.com/marcusj-infra
+
+Summary
+Senior DevOps Engineer with 8+ years of experience architecting resilient cloud infrastructure and streamlining CI/CD pipelines. Proven track record of scaling microservices and leading infrastructure-as-code initiatives to accelerate software delivery.
+
+Skills
+Cloud & DevOps: AWS, Kubernetes, Docker, Terraform, CI/CD, GitHub Actions, Jenkins, Linux, Ansible, Microservices
+Languages: Go, Python, Bash
+Databases: PostgreSQL, Redis, MongoDB
+
+Work Experience
+Lead DevOps Engineer | CloudScale Inc.
+2020 - Present
+- Spearheaded the migration of legacy monolithic applications to a Kubernetes microservices architecture on AWS.
+- Automated infrastructure provisioning using Terraform, which reduced setup time for new environments from days to minutes.
+- Managed and streamlined CI/CD pipelines using GitHub Actions, accelerating deployment frequency by 300%.
+- Mentored junior engineers on best practices for Linux administration and security.
+
+Cloud Infrastructure Engineer | DataStream LLC
+2016 - 2020
+- Deployed and maintained highly available PostgreSQL and Redis database clusters.
+- Achieved 99.99% uptime by implementing robust monitoring solutions using Prometheus and Grafana.
+- Developed custom Python scripts to automate daily backup routines.
+
+Education
+Master of Science in Computer Engineering
+University of California
+2014 - 2016
+CGPA: 8.5/10
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
