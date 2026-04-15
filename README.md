@@ -4,7 +4,6 @@
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
   <img src="https://img.shields.io/badge/Groq-LLaMA%203.3%2070B-F55036?style=flat-square" />
-  <img src="https://img.shields.io/badge/License-MIT-22C55E?style=flat-square" />
   <img src="https://img.shields.io/badge/Status-Production-22C55E?style=flat-square" />
 </p>
 
@@ -277,10 +276,6 @@ All settings live in the sidebar at runtime. For Streamlit Cloud deployment, set
 | Max jobs to display | Sidebar slider | 5–25 jobs shown (default: 10) |
 
 ---
-
-## 📄 License
-
-MIT — free to use, modify, and deploy.
 
 ---
 
