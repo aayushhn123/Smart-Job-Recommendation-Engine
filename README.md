@@ -12,7 +12,8 @@
 </p>
 
 <p align="center">
-  <a href="https://smart-job-recommendation-engine.streamlit.app/">🚀 Live Demo</a> &nbsp;·&nbsp;
+  <a href="https://smart-job-recommendation-engine.streamlit.app/">🚀 Web App Link</a> &nbsp;·&nbsp;
+  <a href="https://drive.google.com/file/d/1wNr8u4bkKx1upW_Z3hqSu-XwhI75nUgc/view?usp=sharing">🎥 Demo Video </a> &nbsp;·&nbsp;
   <a href="#-setup">⚙️ Setup</a> &nbsp;·&nbsp;
   <a href="#-api-keys">🔑 API Keys</a> &nbsp;·&nbsp;
   <a href="#-architecture">🏗️ Architecture</a>
